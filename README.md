@@ -1,3 +1,4 @@
-# ajce-cs_class_assistant
+# CS ASSISTNAT [in progress]
 
-for presentation
+CS Assistant is an online web platform for cs students of ajce
+
