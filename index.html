@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>CSE-A</title>
+    <link rel="stylesheet" href="css/style.css?v=1.3">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-light bg-light" id="navbar-main">
+        <a class="navbar-brand" href="#">&nbsp; &nbsp; &nbsp;
+            <span onclick="openMenu()"> &#9776;</span> &nbsp; CSE-A
+        </a>
+        </div>
+    </nav>
+
+    <div class="space"></div>
+
+    <div class="container">
+        <!-- WISH SECTION -->
+        <div id="wishSection" class="row">
+            <h1 id="wishcontentTitle">Hi There,</h1>
+            <h2 class="text-transition" id="wishcontent">Welcome back !</h2><br>
+            <!--<p id="lorawords">Want to join an upcoming class? No worries! Just click on it &semi;&rpar;</p>-->
+        </div>
+
+        <!-- Button trigger modal -->
+        <!-- Button trigger modal -->
+        <!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalLong">
+            Launch demo modal
+        </button>-->
+
+        <div class="space"></div>
+
+        <!-- CURRENT TIMETABLE -->
+        <div class="row currentTimetable">
+            <div id="currentTimetable" class="col-sm-12 col-md-8 col-lg-6">
+
+                <!-- CURRENT CLASS -->
+                <h2 class="sectionTitle">NOW</h2><i class="fa fa-check-circle-o"></i>
+
+                <hr class="ruler-1">
+
+                <div class="currentClass" id="currentClassDiv">
+                    <h2 id="cct">Javascript Error</h2>
+                    <p id="nxtclasson"></p>
+                    <p id="prdTxt"></p>
+                    <button id="joinclass" onclick="joinClass()">Join Class</button>
+                </div><br>
+                <div id="databaseStatusContainer">
+                    <p id="dbmsg">Looking for updates..</p>
+                </div>
+
+                <div class="space"></div>
+
+                <!-- UPCOMING CLASS -->
+                <h2 class="sectionTitle">UPCOMING</h2>
+                <hr class="ruler-2">
+
+                <div class="upcomingClasses" id="upclass1">
+                    <h2 id="upct1"></h2>
+                    <p id="nxtup1"></p>
+                    <p>1st period | 8:45 AM</p>
+                    <!--<button id="joinclass-2" onclick="joinClass()">Join Class</button>-->
+                </div>
+
+                <div class="upcomingClasses" id="upclass2">
+                    <h2 id="upct2"></h2>
+                    <p id="nxtup2"></p>
+                    <p>2nd period | 9:45 AM</p>
+                </div>
+
+                <div class="upcomingClasses" id="upclass3">
+                    <h2 id="upct3"></h2>
+                    <p id="nxtup3"></p>
+                    <p>3rd period | 11: 00 AM</p>
+                </div>
+
+                <div class="upcomingClasses" id="upclass4">
+                    <h2 id="upct4"></h2>
+                    <p id="nxtup4"></p>
+                    <p>4th period | 12:00 AM</p>
+                </div>
+
+                <div class="upcomingClasses" id="upclass5">
+                    <h2 id="upct5"></h2>
+                    <p id="nxtup5"></p>
+                    <p>5th period | 2:00 PM</p>
+                </div>
+
+                <div class="upcomingClasses" id="upclass6">
+                    <h2 id="upct6"></h2>
+                    <p id="nxtup6"></p>
+                    <p>6th period | 3:00 PM</p>
+                </div>
+
+                <p id="noClassTextOne">There are no upcoming classes.</p>
+
+                <div class="space"></div>
+
+                <!-- PREVIOUS CLASS -->
+                <h2 class="sectionTitle">PREVIOUS</h2>
+                <hr class="ruler-3">
+
+                <div class="previousClasses" id="prclass1">
+                    <h2 id="prct1"></h2>
+                    <p id="nxtpr1"></p>
+                    <p>1st period</p>
+                </div>
+
+                <div class="previousClasses" id="prclass2">
+                    <h2 id="prct2"></h2>
+                    <p id="nxtpr2"></p>
+                    <p>2nd period</p>
+                </div>
+
+                <div class="previousClasses" id="prclass3">
+                    <h2 id="prct3"></h2>
+                    <p id="nxtpr3"></p>
+                    <p>3rd period</p>
+                </div>
+
+                <div class="previousClasses" id="prclass4">
+                    <h2 id="prct4"></h2>
+                    <p id="nxtpr4"></p>
+                    <p>4th period</p>
+                </div>
+
+                <div class="previousClasses" id="prclass5">
+                    <h2 id="prct5"></h2>
+                    <p id="nxtpr5"></p>
+                    <p>5th period</p>
+                </div>
+
+                <div class="previousClasses" id="prclass6">
+                    <h2 id="prct6"></h2>
+                    <p id="nxtpr6"></p>
+                    <p>6th period</p>
+                </div>
+
+                <p id="noClassTextTwo">There are no previous classes.</p>
+            </div>
+            <div id="allTimeTable" class="col-sm-12 col-md-4 col-lg-6">
+                <h2 class="sectionTitle">TIMETABLE</h2>
+                <hr class="ruler-2">
+                <div class="shortTT">
+                    <h3>MONDAY</h3>
+                    <ul id="ttmonday">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="shortTT">
+                    <h3>TUESDAY</h3>
+                    <ul id="tttuesday">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="shortTT">
+                    <h3>WEDNESDAY</h3>
+                    <ul id="ttwednesday">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="shortTT">
+                    <h3>THURSDAY</h3>
+                    <ul id="ttthursday">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="shortTT">
+                    <h3>FRIDAY</h3>
+                    <ul id="ttfriday">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="space"></div>
+
+        <!-- DATA COLLECTION MODAL POPUPS -->
+        <!-- DC-1 -->
+        <div class="modal fade" id="dcModal1" tabindex="-1" role="dialog" aria-labelledby="dcModal1Title"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="dcModal1Title">What should we call you?</h5>
+                        <button type="button" onclick="hideModal()" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="dataCollectionForm1f1">First name</label>
+                                <input type="text" class="form-control" id="dataCollectionForm1f1">
+                            </div><br>
+                            <div class="form-group">
+                                <label for="dataCollectionForm1f2">Middle name</label>
+                                <input type="text" class="form-control" id="dataCollectionForm1f2"
+                                    placeholder="Optional">
+                            </div><br>
+                            <div class="form-group">
+                                <label for="dataCollectionForm1f3">Last name</label>
+                                <input type="text" class="form-control" id="dataCollectionForm1f3">
+                            </div>
+                        </form>
+                        <br>
+                        <p class="fw-lighter">This data is only visible to you and are not stored in our database,
+                            this may change in future and if so we will clearly mention everything about how we collect
+                            and process the data.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" onclick="hideModal()" class="btn btn-secondary">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="submitData(1);">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- WELCOME NOTE -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Release note v1.6</h5>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h2></h2>
+                        <p>Hi there,<br>This is a brief introduction to this website. First of all let me thank you for
+                            using this site.</p>
+                        <br>
+                        <p></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SIDEBAR NAV-->
+    <div id="sidebar" class="d-flex flex-column flex-shrink-0 p-3 bg-light left-sidebar-hide" style="width: 280px;">
+        <span id="menuCloseButton" onclick="closeMenu()">&times;</span>
+        <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32">
+                <use xlink:href="#bootstrap"></use>
+            </svg>
+            <span class="fs-4">CSE A</span>
+        </a>
+        <hr>
+        <ul id="sidebase-menulist" class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="#home" class="nav-link active" aria-current="page" onclick="navHome(this)">
+                    <svg class="bi me-2" width="16" height="16">
+                        <use xlink:href="#home"></use>
+                    </svg>
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="#timetable" class="nav-link link-dark" onclick="navTimetable(this)">
+                    <svg class="bi me-2" width="16" height="16">
+                        <use xlink:href="#speedometer2"></use>
+                    </svg>
+                    Timetable
+                </a>
+            </li>
+            <li>
+                <a href="#contactus" class="nav-link link-dark" onclick="navContactUs(this)">
+                    <svg class="bi me-2" width="16" height="16">
+                        <use xlink:href="#table"></use>
+                    </svg>
+                    Contact Us
+                </a>
+            </li>
+            <!--<li>
+                <a href="#" class="nav-link link-dark">
+                    <svg class="bi me-2" width="16" height="16">
+                        <use xlink:href="#grid"></use>
+                    </svg>
+                    one
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link link-dark">
+                    <svg class="bi me-2" width="16" height="16">
+                        <use xlink:href="#people-circle"></use>
+                    </svg>
+                    two
+                </a>
+            </li>-->
+        </ul>
+        <hr>
+        <!--<div class="dropdown">
+            <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
+                id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                <strong>User</strong>
+            </a>
+            <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+                <li><a class="dropdown-item" href="#">New project...</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+        </div>-->
+    </div>
+
+    <!-- POP UP MESSAGES -->
+    <div class="shadowLayer" id="DlgBoxShadow"></div>
+
+    <!-- LAB CLASS SELECTION -->
+    <div class="alertBoxContent" id="msgbox1">
+        <div class="container">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="labClassSelection" id="rvchem" checked>
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Chemistry Lab
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="labClassSelection" id="rvcivil">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Civil Lab
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="labClassSelection" id="rvmech">
+                <label class="form-check-label" for="flexRadioDefault3">
+                    Mechanical Workshop
+                </label>
+            </div>
+            <br>
+            <button type="button" id="joinlabclass" class="btn btn-primary btn-md"
+                onclick="joinLabClass()">JOIN</button>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        var fetchData1 = 'init', fetchData2 = 'init', fetchData3 = 'init', fetchData4 = 'init', fetchData5 = 'init', fetchData6 = 'init', refCode = 'init', currentDateInstant, currentMonthInstant, currentTDInstant;
+    </script>
+
+    <script type="module">
+        currentTDInstant = new Date();
+        currentMonthInstant = currentTDInstant.getMonth() + 1;
+        currentDateInstant = currentTDInstant.getDate();
+        refCode = currentDateInstant.toString() + currentMonth.toString() + '2022';
+        //refCode = '2412022'
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCyIzzAEVq7Dt7i3nJDzRaLLWFa7Zqblqs",
+            authDomain: "adhil-services.firebaseapp.com",
+            databaseURL: "https://adhil-services-default-rtdb.firebaseio.com",
+            projectId: "adhil-services",
+            storageBucket: "adhil-services.appspot.com",
+            messagingSenderId: "493243510921",
+            appId: "1:493243510921:web:566e90daef4f9177d95658"
+        };
+
+        const app = initializeApp(firebaseConfig);
+
+        import { getDatabase, get, ref, set, child, update, remove }
+            from "https://www.gstatic.com/firebasejs/9.6.3/firebase-database.js"
+
+        const db = getDatabase();
+
+        const dbref = ref(db);
+        get(child(dbref, "CSE-A/" + refCode)).then((snapshot) => {
+            if (snapshot.exists()) {
+                fetchData1 = snapshot.val().f1;
+                fetchData2 = snapshot.val().f2;
+                fetchData3 = snapshot.val().f3;
+                fetchData4 = snapshot.val().f4;
+                fetchData5 = snapshot.val().f5;
+                fetchData6 = snapshot.val().f6;
+                //console.log(fetchData1);
+            }
+
+            else {
+                fetchData1 = 'no-snap';
+            }
+        })
+            .catch((error) => {
+                console.log(error);
+                fetchData1 = 'error'
+            });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+
+    <script src="scripts/script.js?v=2.0"></script>
+    <!--<form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Your Name:</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>-->
+</body>
+
+</html>
